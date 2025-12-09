@@ -288,29 +288,29 @@ export default function App() {
     </>
   );
 } */
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Home from './components/home';
+import About from './components/about';
+import Contact from './components/contact';
+import Product from './components/Products'; 
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link> |{""}
+        <Link to="/about">About</Link> |{""}
+        <Link to="/contact">Contact</Link> |{""}
+        <Link to="/product">Product</Link> {/* ✔ Added */}
+      </nav>
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/product" element={<Product />} /> {/* Already correct */}
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
