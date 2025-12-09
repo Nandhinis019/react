@@ -1,9 +1,12 @@
-import React from "react";
 
-function App() {
 
-  const products = [
-    {
+
+/*import React from "react";/*  */
+
+/*  *function App() {/*  */
+
+ /*   const products = [/*  */
+   /*   {
       id: 1,
       name: "Mobile",
       price: "₹15000",
@@ -71,9 +74,226 @@ function App() {
 
     </div>
   );
+}/*  */
+
+/*  *export default App;/*  */
+
+/*  *import { useState, useRef } from 'react';
+
+export default function App() {
+  
+  // State to hold submitted values
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    marks: ""
+  });
+
+  // Refs for each input
+  const nameRef = useRef();
+  const ageRef = useRef();
+  const marksRef = useRef();
+
+  const handleSubmit = () => {
+    setFormData({
+      name: nameRef.current.value,
+      age: ageRef.current.value,
+      marks: marksRef.current.value
+    });
+  };
+
+  return (
+    <>
+      <input type="text" placeholder="Enter your name" ref={nameRef} />
+      <input type="number" placeholder="Enter your age" ref={ageRef} />
+      <input type="number" placeholder="Enter your marks" ref={marksRef} />
+      
+      <button onClick={handleSubmit}>Submit</button>
+
+      <p>Name: {formData.name}</p>
+      <p>Age: {formData.age}</p>
+      <p>Marks: {formData.marks}</p>
+    </>
+  );
 }
+  /*  */
+ /*  import { useState } from 'react';
 
-export default App;
+export default function App() {
+  const [name, setName] = useState("");
+  const [submittedName, setSubmittedName] = useState("");
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    setSubmittedName(name); 
+  }
+
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={handleName}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      {/* Display the submitted name */
+      /*  *{submittedName && (
+        <h2>Submitted Name: {submittedName}</h2>
+      )}
+    </>
+  );
+}/*  */
+/*  import { useEffect, useState } from "react";
+
+export default function App() {
+  const [todo, setTodo] = useState("");
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then(res => res.json())
+      .then(data => setTodo(data.title));
+  }, []);
+
+  return (
+    <div>
+      <h2>{todo}</h2>
+    </div>
+  );
+}/ */
+
+/*  *import { useState } from "react";
+
+export default function App() {
+  const [text, setText] = useState("");
+
+  const handleClick = (value) => {
+    setText(value);
+    console.log(value); 
+  };
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>ZOVA</h1>
+
+      <button onClick={() => handleClick("Users")}>Users</button>
+      <button onClick={() => handleClick("Posts")}>Posts</button>
+      <button onClick={() => handleClick("Comments")}>Comments</button>
+
+      <h2>{text}</h2>
+    </div>
+  );
+}/*  */
+
+/*  import { useEffect, useState} from "react"; 
+
+  export default function App() {
+    const [type, setType] = useState();
+    console.log("RENDERING");
+    useEffect(() => {
+      console.log("USE EFFECT");
+      fetch('https://jsonplaceholder.typicode.com/photos')
+      .then(response => response.json())
+      .then(json => console.log(json))
+    },[]) //empty differences
+    return (
+      <>
+        <button onClick={() => setType("albumId")}>AlbumID</button>
+        <button onClick={() => setType("id")}>ID</button>
+        <button onClick={() => setType("url")}>URL</button>
+        <h1>{type}</h1>
+      </>
+    );
+  }/*  */
+/* import { useEffect, useState } from "react";
+
+export default function App() {
+  const [type, setType] = useState("");
+
+  useEffect(() => {
+    if (!type) return;
+
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then(res => res.json())
+      .then(json => {
+        const selectedData = json.map(item => item[type]);
+        console.log(`Showing only: ${type}`);
+        console.log(selectedData);
+      });
+  }, [type]);
+
+  return (
+    <>
+      <button onClick={() => setType("id")}>ID</button>
+      <button onClick={() => setType("title")}>Title</button>
+      <button onClick={() => setType("completed")}>Completed</button>
+    </>
+  );
+}
+ */
+ /* import React, { useState, useEffect } from 'react'
+
+export default function App() {
+  const [type, setType] = useState("photos");
+  const [data, setData] = useState([]);
+
+  console.log("Rendering");
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${type}`)
+      .then(response => response.json())
+      .then(json => setData(json)); // Save data to state
+  }, [type]);
+
+  return (
+    <> 
+      <button onClick={() => setType("photos")}>Photo</button>
+      <button onClick={() => setType("albums")}>Album</button>
+      
+      <ul>
+        {data.slice(0, 10).map((item) => (
+          <li key={item.id}>{item.title}</li>
+        ))}
+      </ul>
+    </>
+  );
+} */
+
+ /* import { useState } from "react";
+
+export default function App() {
+  const [name, setName] = useState("");
+
+  const handleSave = () => {
+    localStorage.setItem("username", name);
+    console.log("Saved:", name);
+  };
+
+  return (
+    <>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={handleSave}>Save</button>
+    </>
+  );
+} */
+
+
+
+
+
+  
 
 
 
@@ -82,3 +302,15 @@ export default App;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  
